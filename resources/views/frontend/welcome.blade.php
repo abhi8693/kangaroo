@@ -30,7 +30,7 @@
                     @if(session()->has('error'))
                     <div class="alert alert-danger">{{session('error')}}</div>
                     @endif
-                    <form action="{{route('store')}}" method="post">
+                    <form action="{{route('enquiries.store')}}" method="post">
                         @csrf
                         <h3>Request A Quote</h3>
 
@@ -420,7 +420,7 @@
                 <div class="service-box">
                     <img src="assets/img/{{$template->image}}">
                     <div class="service-content">
-                        <h3><a href="{{route('front.detail',$template->slug)}}">{{$template->title}}</a></h3>
+                        <h3><a href="">{{$template->title}}</a></h3>
                         <div class="price-rate">
                             <div class="rate">
                                 <ul>

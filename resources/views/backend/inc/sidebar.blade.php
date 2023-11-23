@@ -212,5 +212,31 @@
                 </ul>
             </div>
         </li>
+
+
+        
+        <li class="nav-item menu-items">
+            <a class="nav-link" data-bs-toggle="collapse" href="#auth7" aria-expanded="false" aria-controls="auth">
+                <span class="menu-icon">
+                    <i class="mdi mdi-security"></i>
+                </span>
+                <span class="menu-title">Package</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth7">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('packages.create')}}">
+                          Add Package
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{route('packages.index')}}">
+                     Package List
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
     </ul>
 </nav>

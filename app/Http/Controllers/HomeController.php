@@ -9,6 +9,7 @@ use App\Models\Type;
 use App\Models\Budget;
 use App\Models\Enquiry;
 use App\Models\template;
+use App\Models\Package;
 
 
 class HomeController extends Controller
@@ -18,12 +19,14 @@ class HomeController extends Controller
      */
     public function index()
     {
+ 
         $categories = category::where('status', 1)->get();
         $niches = Nich::where('status', 1)->get();
         $types = Type::where('status', 1)->get();
         $budgets = Budget::where('status', 1)->get();
         $templates = template::where('status', 1)->get();
-        return view('frontend.welcome', compact('categories', 'budgets', 'niches', 'types', 'templates'));
+        $packages = Package::where('status', 1)->get();
+        return view('frontend.welcome', compact('categories', 'budgets', 'niches', 'types', 'templates', 'packages'));
     }
 
     /**
@@ -96,8 +99,24 @@ class HomeController extends Controller
 
     function todetailindex($slug)
     {
+
+        $categories = category::where('status', 1)->get();
+        $niches = Nich::where('status', 1)->get();
+        $types = Type::where('status', 1)->get();
+        $budgets = Budget::where('status', 1)->get();
+
+
         $detail = template::where('slug', $slug)->first();
-        //  dd($detail);
-        return view('frontend.detail_page',compact('detail'));
+
+        return view('frontend.detail_page', compact('detail', 'categories', 'budgets', 'niches', 'types'));
     }
+
+
+    function topackage()
+    {
+        $packages = Package::all();
+        return view('frontend.packages', compact('packages'));
+    }
+
+    
 }

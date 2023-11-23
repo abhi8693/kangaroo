@@ -39,7 +39,7 @@
     <div class="navbar-collapse collapse" id="navbarContent">
       <ul class="navbar-nav m-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="{{route('home')}}">Home</a>
         </li>
 
         <!-- <li class="nav-item">
@@ -47,7 +47,7 @@
         </li> -->
 
        <li class="nav-item">
-          <a class="nav-link" href="#">Packages</a>
+          <a class="nav-link" href="{{route('front.package')}}">Packages</a>
         </li>
 
         <li class="nav-item">
@@ -67,7 +67,7 @@
       <ul class="header-right">
         <div class="header-contact">
           <div class="cont-icon">
-            <img src="{{asset('assetsf/img/customer.png')}}">
+            <img src='{{asset("assetsf/img/customer.png")}}'>
           </div>
           <div class="cont-content">
             <p>Talk to an expert </p>

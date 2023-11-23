@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\template;
 use illuminate\Support\Str;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 class templateController extends Controller
 {
     /**
@@ -14,7 +16,7 @@ class templateController extends Controller
     public function index()
     {
         $templates = template::all();
-        return view ('backend.templates.template_list',compact('templates'));
+        return view('backend.templates.template_list', compact('templates'));
     }
 
     /**
@@ -23,8 +25,7 @@ class templateController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view ('backend.templates.add_template',compact('categories'));
-
+        return view('backend.templates.add_template', compact('categories'));
     }
 
     /**
@@ -33,16 +34,16 @@ class templateController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'category'=>'required',
-            'title'=>'required',
-            'status'=>'required',
+            'category' => 'required',
+            'title' => 'required',
+            'status' => 'required',
         ]);
-        $imageName = time().'.'.$request->image->extension();
-        $request->image->move(public_path('assets/img'),$imageName);
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->move(public_path('assets/img'), $imageName);
         $template = new template;
         $template->category_id = $request->category;
         $template->title = $request->title;
-        $template->slug =str::slug( $request->title);
+        $template->slug = str::slug($request->title);
         $template->image = $imageName;
         $template->price = $request->price;
         $template->description = $request->description;
@@ -51,7 +52,7 @@ class templateController extends Controller
         $template->meta_description = $request->meta_d;
         $template->status = $request->status;
         $template->save();
-        session()->flash('success','Template Added successfully!');
+        session()->flash('success', 'Template Added successfully!');
         return redirect()->back();
     }
 
@@ -72,8 +73,8 @@ class templateController extends Controller
 
         $template = template::findOrfail($id);
         $categories = Category::all();
-     
-        return view('backend.templates.edit_template', compact('template','categories'));
+
+        return view('backend.templates.edit_template', compact('template', 'categories'));
     }
 
     /**
@@ -82,21 +83,21 @@ class templateController extends Controller
     public function update(Request $request,  $id)
     {
         $request->validate([
-            'category'=>'required',
-            'title'=>'required',
-            'image'=>'required',
-            'status'=>'required',
+            'category' => 'required',
+            'title' => 'required',
+            'image' => 'required',
+            'status' => 'required',
         ]);
 
         $template = template::find($id);
-        if(isset($request->image)){
-        $imageName = time().'.'.$request->image->extension();
-        $request->image->move(public_path('assets/img'),$imageName);
-        $template->image = $imageName;
+        if (isset($request->image)) {
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('assets/img'), $imageName);
+            $template->image = $imageName;
         }
         $template->category_id = $request->category;
         $template->title = $request->title;
-        $template->slug =str::slug( $request->title);
+        $template->slug = str::slug($request->title);
         $template->price = $request->price;
         $template->description = $request->description;
         $template->meta_title = $request->meta_t;
@@ -104,7 +105,7 @@ class templateController extends Controller
         $template->meta_description = $request->meta_d;
         $template->status = $request->status;
         $template->save();
-        session()->flash('success','edit successfully!');
+        session()->flash('success', 'edit successfully!');
         return redirect()->route('templates.index');
     }
 
@@ -115,4 +116,6 @@ class templateController extends Controller
     {
         //
     }
+
+ 
 }

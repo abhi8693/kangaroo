@@ -43,55 +43,90 @@
                 </div>
             </div>
             <div class="col-md-4">
+          
                 <div class="booking-form">
-                    <form method="post" action="#">
+                @if(session()->has('success'))
+                    <div class="alert alert-success">{{session('success')}}</div>
+                    @endif
+                    @if(session()->has('error'))
+                    <div class="alert alert-danger">{{session('error')}}</div>
+                    @endif
+                    <form method="post" action="{{route('enquiries.store')}}">
+                    @csrf
                         <h3>Request A Quote</h3>
                         <div class="form-group">
-                            <input type="text" placeholder="Name" name="name">
+                            <input type="text" placeholder="Name" name="name" id="name">
+                            <span style="color:red"> @error('name')
+                                {{$message}}
+                                @enderror
+                            </span>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Email" name="email">
+                            <input type="text" placeholder="Email" name="email" id="email">
+                            <span style="color:red"> @error('email')
+                                {{$message}}
+                                @enderror
+                            </span>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Phone Number" name="phone">
+                            <input type="text" placeholder="Phone Number" name="phone" id="phone">
+                            <span style="color:red"> @error('phone')
+                                {{$message}}
+                                @enderror
+                            </span>
                         </div>
                         <div class="form-group">
-                            <select>
-                                <option>Type of Website</option>
-                                <option>Business</option>
-                                <option>Personal</option>
-                                <option>Organization</option>
-                                <option>Others</option>
+                            <select name="category">
+                            <option>Type of Website</option>
+                                @foreach($categories as $cat)
+                                <option>{{$cat->title}}</option>
+                                @endforeach
+                            </select>
+                            <span style="color:red"> @error('category')
+                                {{$message}}
+                                @enderror
+                            </span>
                             </select>
                         </div>
                         <div class="form-group">
-                            <select>
-                                <option>Select Niche</option>
-                                <option>Business</option>
-                                <option>Hotel</option>
-                                <option>Resturaunat</option>
-                                <option>Plumber</option>
-                                <option>Doctor</option>
+                            <select name="niche">
+                            <option>Select Niche</option>
+                                @foreach($niches as $niche)
+                                <option>{{$niche->title}}</option>
+                                @endforeach
                             </select>
+                            <span style="color:red"> @error('niche')
+                                {{$message}}
+                                @enderror
+                            </span>
                         </div>
                         <div class="form-group">
-                            <select>
-                                <option>Website Type</option>
-                                <option>Information</option>
-                                <option>Ecommerce</option>
-                                <option>App</option>
-                                <option>Portal</option>
-                                <option>Crypto</option>
+                            <select name="type">
+                            <option>Website Type</option>
+                                @foreach($types as $type)
+                                <option>{{$type->title}}</option>
+                                @endforeach
                             </select>
+                            <span style="color:red"> @error('type')
+                                {{$message}}
+                                @enderror
+                            </span>
                         </div>
                         <div class="form-group">
-                            <select>
-                                <option>Select Budget</option>
-                                <option>$500-$5000</option>
-                                <option>$5000-$12000</option>
-                                <option>$20000+</option>
+                            <select name="budget">
+                            <option>Select Budget</option>
+                                @foreach($budgets as $budget)
+                                <option>{{$budget->price}}</option>
+                                @endforeach
                             </select>
+                            <span style="color:red"> @error('budget')
+                                {{$message}}
+                                @enderror
+                            </span>
+
+
                         </div>
+                       
                         <button>Submit</button>
                     </form>
                 </div>

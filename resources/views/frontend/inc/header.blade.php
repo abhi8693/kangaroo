@@ -51,14 +51,14 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">Templates</a>
+          <a class="nav-link" href="{{route('front.template')}}">Templates</a>
         </li>
 
        
 
 
         <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact Us</a>
+          <a class="nav-link" href="{{route('front.contact')}}">Contact Us</a>
         </li>
 
 

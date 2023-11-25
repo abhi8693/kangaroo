@@ -18,7 +18,9 @@ class isAdmin
         if(Auth::user()->role==1){  
             return $next($request);
         }else{
-            abort('401');
+            Auth::logoutCurrentDevice();
+            return redirect()->route('login');
+        
         }
     }
 }

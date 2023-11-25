@@ -28,6 +28,9 @@
   <link rel="stylesheet" href="{{asset('assetsf/style.css')}}">
 
 
+  
+
+
 </head>
 
 <body>

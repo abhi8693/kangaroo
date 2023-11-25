@@ -64,7 +64,10 @@ class PackageController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $id = decrypt($id);
+        $package = Package::findOrfail($id);
+     
+        return view('backend.package.edit_package', compact('package'));
     }
 
     /**
@@ -72,7 +75,21 @@ class PackageController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+            'status' => 'required',
+        ]);
+        $package = Package::find($id);
+        $package->title = $request->title;
+        $package->slug = str::slug($request->title);
+        $package->price = $request->price;
+        $package->description = $request->description;
+        $package->status = $request->status;
+        $package->save();
+
+        return redirect()->route('packages.index');
     }
 
     /**

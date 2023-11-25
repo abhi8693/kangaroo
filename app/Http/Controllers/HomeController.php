@@ -11,6 +11,7 @@ use App\Models\Enquiry;
 use App\Models\template;
 use App\Models\Package;
 
+use App\Models\Contact;
 
 class HomeController extends Controller
 {
@@ -19,7 +20,7 @@ class HomeController extends Controller
      */
     public function index()
     {
- 
+        // session()->flush();
         $categories = category::where('status', 1)->get();
         $niches = Nich::where('status', 1)->get();
         $types = Type::where('status', 1)->get();
@@ -105,10 +106,13 @@ class HomeController extends Controller
         $types = Type::where('status', 1)->get();
         $budgets = Budget::where('status', 1)->get();
 
-
         $detail = template::where('slug', $slug)->first();
+        if($detail){
+            return view('frontend.detail_page',compact('detail','categories', 'budgets', 'niches', 'types'));
 
-        return view('frontend.detail_page', compact('detail', 'categories', 'budgets', 'niches', 'types'));
+        }else{
+            return redirect()->back();
+        }
     }
 
 
@@ -117,6 +121,15 @@ class HomeController extends Controller
         $packages = Package::all();
         return view('frontend.packages', compact('packages'));
     }
-
-    
+    function templates()
+    {
+        $templates = template::all();
+        $categories = category::where('status', 1)->get();
+        return view('frontend.templates', compact('templates','categories'));
+    }
+    function contacts()
+    {
+        $contacts = Contact::all();
+        return view('frontend.contact_us', compact('contacts'));
+    }
 }

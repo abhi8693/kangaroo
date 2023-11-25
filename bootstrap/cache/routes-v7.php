@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::F4NAnU3zntgbkuZd',
+            '_route' => 'generated::UGOkQMgZmzu41ivQ',
           ),
           1 => NULL,
           2 => 
@@ -122,7 +122,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::vnoowpH9ho02RZ1z',
+            '_route' => 'generated::ZMCZvpuKe18whfxB',
           ),
           1 => NULL,
           2 => 
@@ -495,7 +495,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::tynNB9YlChdU5U5A',
+            '_route' => 'generated::1j3IRTSthlZK8BIG',
           ),
           1 => NULL,
           2 => 
@@ -550,7 +550,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::r1wBbbkP4cnKaO6g',
+            '_route' => 'generated::rTMotVzhhqbut3Fx',
           ),
           1 => NULL,
           2 => 
@@ -641,7 +641,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::7z97xmGPY2n3R2gc',
+            '_route' => 'generated::krld5F0VeW6vEIA7',
           ),
           1 => NULL,
           2 => 
@@ -749,6 +749,62 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/contacts' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'contacts.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'contacts.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/contacts/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'contacts.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/package' => 
       array (
         0 => 
@@ -769,10 +825,50 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/template' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'front.template',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/contact_us' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'front.contact',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
     ),
     2 => 
     array (
-      0 => '{^(?|/admin/(?|categor(?|ies/([^/]++)(?|(*:42)|/edit(*:54)|(*:61))|y/delete/([^/]++)(*:86))|t(?|ype(?|s/([^/]++)(?|(*:117)|/edit(*:130)|(*:138))|/delete/([^/]++)(*:163))|emplates/(?|([^/]++)(?|(*:195)|/edit(*:208)|(*:216))|delete/([^/]++)(*:240)))|niches/([^/]++)(?|(*:268)|/edit(*:281)|(*:289))|budgets/(?|([^/]++)(?|(*:320)|/edit(*:333)|(*:341))|delete/([^/]++)(*:365))|packages/(?|([^/]++)(?|(*:397)|/edit(*:410)|(*:418))|delete/([^/]++)(*:442)))|/password/reset/([^/]++)(*:476)|/detail/([^/]++)(*:500)|/enquiries/([^/]++)(?|(*:530)|/edit(*:543)|(*:551)))/?$}sDu',
+      0 => '{^(?|/admin/(?|categor(?|ies/([^/]++)(?|(*:42)|/edit(*:54)|(*:61))|y/delete/([^/]++)(*:86))|t(?|ype(?|s/([^/]++)(?|(*:117)|/edit(*:130)|(*:138))|/delete/([^/]++)(*:163))|emplates/(?|([^/]++)(?|(*:195)|/edit(*:208)|(*:216))|delete/([^/]++)(*:240)))|niches/([^/]++)(?|(*:268)|/edit(*:281)|(*:289))|budgets/(?|([^/]++)(?|(*:320)|/edit(*:333)|(*:341))|delete/([^/]++)(*:365))|packages/(?|([^/]++)(?|(*:397)|/edit(*:410)|(*:418))|delete/([^/]++)(*:442)))|/password/reset/([^/]++)(*:476)|/detail/([^/]++)(*:500)|/enquiries/([^/]++)(?|(*:530)|/edit(*:543)|(*:551))|/contacts/([^/]++)(?|(*:581)|/edit(*:594)|(*:602)))/?$}sDu',
     ),
     3 => 
     array (
@@ -1552,6 +1648,94 @@ app('router')->setCompiledRoutes(
           5 => true,
           6 => NULL,
         ),
+      ),
+      581 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'contacts.show',
+          ),
+          1 => 
+          array (
+            0 => 'contact',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      594 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'contacts.edit',
+          ),
+          1 => 
+          array (
+            0 => 'contact',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      602 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'contacts.update',
+          ),
+          1 => 
+          array (
+            0 => 'contact',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'contacts.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'contact',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
         2 => 
         array (
           0 => NULL,
@@ -1714,7 +1898,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::F4NAnU3zntgbkuZd' => 
+    'generated::UGOkQMgZmzu41ivQ' => 
     array (
       'methods' => 
       array (
@@ -1737,7 +1921,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::F4NAnU3zntgbkuZd',
+        'as' => 'generated::UGOkQMgZmzu41ivQ',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1753,7 +1937,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::vnoowpH9ho02RZ1z' => 
+    'generated::ZMCZvpuKe18whfxB' => 
     array (
       'methods' => 
       array (
@@ -1777,7 +1961,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::vnoowpH9ho02RZ1z',
+        'as' => 'generated::ZMCZvpuKe18whfxB',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3651,7 +3835,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::tynNB9YlChdU5U5A' => 
+    'generated::1j3IRTSthlZK8BIG' => 
     array (
       'methods' => 
       array (
@@ -3671,7 +3855,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::tynNB9YlChdU5U5A',
+        'as' => 'generated::1j3IRTSthlZK8BIG',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3760,7 +3944,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::r1wBbbkP4cnKaO6g' => 
+    'generated::rTMotVzhhqbut3Fx' => 
     array (
       'methods' => 
       array (
@@ -3780,7 +3964,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::r1wBbbkP4cnKaO6g',
+        'as' => 'generated::rTMotVzhhqbut3Fx',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3979,7 +4163,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::7z97xmGPY2n3R2gc' => 
+    'generated::krld5F0VeW6vEIA7' => 
     array (
       'methods' => 
       array (
@@ -3999,7 +4183,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::7z97xmGPY2n3R2gc',
+        'as' => 'generated::krld5F0VeW6vEIA7',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4382,6 +4566,263 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'contacts.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'contacts',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'admin',
+        ),
+        'as' => 'contacts.index',
+        'uses' => 'App\\Http\\Controllers\\ContactController@index',
+        'controller' => 'App\\Http\\Controllers\\ContactController@index',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'contacts.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'contacts/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'admin',
+        ),
+        'as' => 'contacts.create',
+        'uses' => 'App\\Http\\Controllers\\ContactController@create',
+        'controller' => 'App\\Http\\Controllers\\ContactController@create',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'contacts.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'contacts',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'admin',
+        ),
+        'as' => 'contacts.store',
+        'uses' => 'App\\Http\\Controllers\\ContactController@store',
+        'controller' => 'App\\Http\\Controllers\\ContactController@store',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'contacts.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'contacts/{contact}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'admin',
+        ),
+        'as' => 'contacts.show',
+        'uses' => 'App\\Http\\Controllers\\ContactController@show',
+        'controller' => 'App\\Http\\Controllers\\ContactController@show',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'contacts.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'contacts/{contact}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'admin',
+        ),
+        'as' => 'contacts.edit',
+        'uses' => 'App\\Http\\Controllers\\ContactController@edit',
+        'controller' => 'App\\Http\\Controllers\\ContactController@edit',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'contacts.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'contacts/{contact}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'admin',
+        ),
+        'as' => 'contacts.update',
+        'uses' => 'App\\Http\\Controllers\\ContactController@update',
+        'controller' => 'App\\Http\\Controllers\\ContactController@update',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'contacts.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'contacts/{contact}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'admin',
+        ),
+        'as' => 'contacts.destroy',
+        'uses' => 'App\\Http\\Controllers\\ContactController@destroy',
+        'controller' => 'App\\Http\\Controllers\\ContactController@destroy',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'front.package' => 
     array (
       'methods' => 
@@ -4404,6 +4845,80 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'front.package',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'front.template' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'template',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\HomeController@templates',
+        'controller' => 'App\\Http\\Controllers\\HomeController@templates',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'front.template',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'front.contact' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'contact_us',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\HomeController@contacts',
+        'controller' => 'App\\Http\\Controllers\\HomeController@contacts',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'front.contact',
       ),
       'fallback' => false,
       'defaults' => 
